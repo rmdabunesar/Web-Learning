@@ -1,0 +1,57 @@
+/* .grid-container {
+    display: grid;
+    background-color: aqua;
+    font-size: 20px;
+    padding: 30px;
+
+    grid-template-columns: auto auto;
+    gap: 50px 10px;
+}
+
+.grid-items {
+    background-color: #ffffff;
+    border: 1px solid;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.item-1 {
+    grid-row: 1 / span 2;
+} */
+
+
+
+/* .grid-container  {
+    background-color: aqua;
+    display: grid;
+
+    justify-content: space-between;
+}
+
+.grid-items {
+    background: tomato;
+    margin: 5px;
+} */
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea';
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.item1 {
+    grid-area: myArea myArea;
+}
