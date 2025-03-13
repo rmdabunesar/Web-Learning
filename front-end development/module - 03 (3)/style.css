@@ -1,0 +1,191 @@
+:root {
+    --primary-bg: #cccccc;
+    --secondary-bg: #f5f5f5;
+    --border-color: #333333;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    background-color: var(--primary-bg);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-areas:
+        'header  header  header'
+        'nav     nav     nav'
+        'section section aside'
+        'article article aside'
+        'footer  footer  footer';
+    gap: 10px;
+}
+
+.grid-container>div {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item1 {
+    grid-area: header;
+}
+
+.item2 {
+    grid-area: nav;
+}
+
+.item3 {
+    grid-area: section;
+    min-height: 150px;
+}
+
+.item4 {
+    grid-area: aside;
+    min-height: 150px;
+}
+
+.item5 {
+    grid-area: article;
+    min-height: 150px;
+}
+
+.item6 {
+    grid-area: footer;
+}
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-areas:
+            'header     header'
+            'nav        nav'
+            'section    aside'
+            'article    aside'
+            'footer     footer';
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'nav   '
+            'section'
+            'aside'
+            'article'
+            'footer';
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* animation  */
+.animation {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: relative;
+    animation-name: run-change-bg;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes run-change-bg {
+    0% {
+        background-color: aqua;
+        left: 0;
+        top: 0;
+    }
+
+    25% {
+        background-color: red;
+        left: 500px;
+        top: 0;
+    }
+
+    50% {
+        background-color: yellow;
+        left: 500px;
+        top: 500px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0;
+        top: 500px
+    }
+
+    100% {
+        background-color: tomato;
+        left: 0;
+        top: 0
+    }
+}
+
+
+
+
+
+
+
+/* disply position */
+.parent-box {
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+
+    position: relative;
+}
+
+.child-box {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+
+    position: absolute;
+    left: 0px;
+    top: 400px;
+}
+
+.position-fixed {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+
+    position: fixed;
+    top: 200px;
+    left: 200px;
+}
+
+.c-box {
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+
+    position: sticky;
+    top: 0;
+    left: 0;
+}
